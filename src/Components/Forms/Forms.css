@@ -1,0 +1,5 @@
+.form-email-container{
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+}

@@ -1,5 +1,8 @@
 import "./Panel.css";
 import PanelMenu from "./PanelMenu";
+import PanelForm from "./PanelDisplay/PanelForm";
+
+
 
 const Panel = () => {
   return (
@@ -7,7 +10,9 @@ const Panel = () => {
       <div className="panel-menu-container">
         <PanelMenu></PanelMenu>
       </div>
-      <div className="panel-display">asdas</div>
+      <div className="panel-display">
+        <PanelForm></PanelForm>
+      </div>
     </section>
   );
 };

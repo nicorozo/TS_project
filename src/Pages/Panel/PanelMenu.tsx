@@ -5,7 +5,9 @@ const PanelMenu = () => {
     <ul className="panel-menu-ul">
       {/* list of elements for the menu */}
       {selectors.map((selector) => (
-        <button className="panel-menu-selector">{selector.name}</button>
+        <button className="panel-menu-selector"
+        key={selector.name}
+        >{selector.name}</button>
       ))}
     </ul>
   );

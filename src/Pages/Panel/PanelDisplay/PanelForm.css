@@ -1,0 +1,16 @@
+.panel-form-container{
+    display: flex;
+    width: 100%;
+}
+.form-input-message{
+    display: flex;
+    width: 300px;
+    height: 200px;
+    text-align: left;
+    padding: 0;
+}
+.panel-form-container button{
+    margin-top: 2rem;
+    background-color: black;
+    color: white;
+}
