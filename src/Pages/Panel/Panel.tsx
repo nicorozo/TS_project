@@ -2,8 +2,6 @@ import "./Panel.css";
 import PanelMenu from "./PanelMenu";
 import PanelForm from "./PanelDisplay/PanelForm";
 
-
-
 const Panel = () => {
   return (
     <section className="panel-section">
