@@ -1,12 +1,7 @@
-import EmailForm from "../../../Components/Forms/EmailForm"
-import "./PanelForm.css"
+import "./PanelForm.css";
 
-const PanelForm = () => {
-  return (
-    <div className="panel-form-container">
-            <EmailForm></EmailForm>
-    </div>
-  )
-}
+const PanelForm = ({ children }) => {
+  return <div className="panel-form-container">{children}</div>;
+};
 
-export default PanelForm
+export default PanelForm;

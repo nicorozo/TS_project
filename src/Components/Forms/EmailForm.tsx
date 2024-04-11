@@ -1,23 +1,20 @@
 import React from "react";
 import "./Forms.css";
 
-type FormProps = {
-  name: string;
-  email: string;
-  message: string;
-};
-const formInput: FormProps = {
+const formInput: { [index: string]: string } = {
   name: "",
   email: "",
   message: "",
 };
 
 const EmailForm = () => {
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = event.target;
     formInput[name] = value;
 
-    console.log(formInput[name], typeof name);
+    console.log(formInput[name], name);
   };
   return (
     <form className="form-email-container">
@@ -25,10 +22,15 @@ const EmailForm = () => {
       <input type="text" id="name" name="name" onChange={handleChange} />
 
       <label htmlFor="email">Email</label>
-      <input type="text" id="email" />
+      <input type="text" id="email" name="email" onChange={handleChange} />
 
       <label htmlFor="message">Message</label>
-      <textarea className="form-input-message" id="message" />
+      <textarea
+        className="form-input-message"
+        id="message"
+        name="message"
+        onChange={handleChange}
+      />
 
       <button type="submit">Send</button>
     </form>

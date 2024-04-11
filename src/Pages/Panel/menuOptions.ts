@@ -4,7 +4,7 @@ export interface Selectors {
 
 export const selectors: Selectors[] = [
   {
-    name: "Selector",
+    name: "Message",
   },
   {
     name: "Options",
@@ -13,7 +13,7 @@ export const selectors: Selectors[] = [
     name: "Images",
   },
   {
-    name: "texts",
+    name: "Texts",
   },
 ];
 

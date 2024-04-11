@@ -28,6 +28,7 @@
     background-color: white;
     flex: 4;
     padding: 2rem;
+    color: black;
 }
 .panel-menu-ul{
     display: flex;
