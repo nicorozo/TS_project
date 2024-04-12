@@ -5,7 +5,8 @@ import { MouseEventHandler, useState } from "react";
 import EmailForm from "../../Components/Forms/EmailForm";
 import PanelViewMessages from "./PanelDisplay/PanelViewMessages";
 
-type FormInputProps = {
+export type FormInputProps = {
+  [index: string]: string;
   name: string;
   email: string;
   message: string;
@@ -13,7 +14,7 @@ type FormInputProps = {
 
 const Panel = () => {
   const [selector, setSelector] = useState("");
-  const [formMessage, setFormMessage] = useState([]);
+  const [formMessage, setFormMessage] = useState<FormInputProps[]>([]);
 
   /* Handle click and transfers name of selected button */
   const handleClick: MouseEventHandler = (event) => {

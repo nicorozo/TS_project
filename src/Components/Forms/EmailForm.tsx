@@ -3,10 +3,13 @@ import { FormInputProps } from "../../Pages/Panel/Panel";
 import "./Forms.css";
 
 type EmailFormProps = {
-  submitMessage: (formInput: FormInputProps, e: React.MouseEvent) => void;
+  submitMessage: (
+    formInput: FormInputProps,
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => void;
 };
 
-const formInput: { [index: string]: string } = {
+const formInput: FormInputProps = {
   name: "",
   email: "",
   message: "",
