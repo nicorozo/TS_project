@@ -5,8 +5,15 @@ import { MouseEventHandler, useState } from "react";
 import EmailForm from "../../Components/Forms/EmailForm";
 import PanelViewMessages from "./PanelDisplay/PanelViewMessages";
 
+type FormInputProps = {
+  name: string;
+  email: string;
+  message: string;
+};
+
 const Panel = () => {
   const [selector, setSelector] = useState("");
+  const [formMessage, setFormMessage] = useState([]);
 
   /* Handle click and transfers name of selected button */
   const handleClick: MouseEventHandler = (event) => {
@@ -15,6 +22,15 @@ const Panel = () => {
       console.log("name:", name);
       setSelector(name);
     } else console.log("No name:", name);
+  };
+  const submitMessage = (
+    formInput: FormInputProps,
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+    console.log("Form input: ", formInput);
+    setFormMessage([...formMessage, formInput]);
+    console.log("Form Message: ", formMessage);
   };
 
   return (
@@ -26,7 +42,7 @@ const Panel = () => {
         {/* render display section on 'selector' */}
         {selector === "Message" && (
           <PanelForm>
-            <EmailForm></EmailForm>
+            <EmailForm submitMessage={submitMessage}></EmailForm>
           </PanelForm>
         )}
         {selector === "Texts" && <PanelViewMessages></PanelViewMessages>}

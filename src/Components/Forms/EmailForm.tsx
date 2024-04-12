@@ -1,5 +1,10 @@
 import React from "react";
+import { FormInputProps } from "../../Pages/Panel/Panel";
 import "./Forms.css";
+
+type EmailFormProps = {
+  submitMessage: (formInput: FormInputProps, e: React.MouseEvent) => void;
+};
 
 const formInput: { [index: string]: string } = {
   name: "",
@@ -7,7 +12,7 @@ const formInput: { [index: string]: string } = {
   message: "",
 };
 
-const EmailForm = () => {
+const EmailForm = ({ submitMessage }: EmailFormProps) => {
   const handleChange = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -32,7 +37,9 @@ const EmailForm = () => {
         onChange={handleChange}
       />
 
-      <button type="submit">Send</button>
+      <button type="submit" onClick={(e) => submitMessage(formInput, e)}>
+        Send
+      </button>
     </form>
   );
 };
